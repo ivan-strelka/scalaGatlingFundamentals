@@ -1,4 +1,4 @@
-package videoGameDBtest
+package videoGameDBscn
 
 import io.gatling.core.Predef._
 import io.gatling.http.HeaderNames.Accept
@@ -6,7 +6,7 @@ import io.gatling.http.HeaderValues.ApplicationJson
 import io.gatling.http.Predef._
 
 
-class FirstSimpleVideoGamesTest extends Simulation {
+class FirstSimpleVideoGamescn extends Simulation {
 
   // 1 Step Configuration HTTP
   val httpConfig = http.baseUrl("http://localhost:8080/app/")
@@ -21,6 +21,12 @@ class FirstSimpleVideoGamesTest extends Simulation {
       .get("videogames")
       .check(status.is(200))
       .check(header("Content-Type").is("application/json"))
+      .check(jsonPath("$[1].name").is("Gran Turismo 3"))
+      .check(jsonPath("$[1].id").is("2"))
+      .check(jsonPath("$[1].releaseDate").is("2001-03-10"))
+      .check(jsonPath("$[1].reviewScore").is("91"))
+      .check(jsonPath("$[1].category").is("Driving"))
+      .check(jsonPath("$[1].rating").is("Universal"))
     )
 
 
