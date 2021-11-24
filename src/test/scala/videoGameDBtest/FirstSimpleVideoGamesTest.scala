@@ -26,7 +26,7 @@ class FirstSimpleVideoGamesTest extends Simulation {
 
   // 3 Step Load Scenario
   setUp(
-    scn.inject(atOnceUsers(1))
+    scn.inject(atOnceUsers(10))
   ).protocols(httpConfig)
 
 }
