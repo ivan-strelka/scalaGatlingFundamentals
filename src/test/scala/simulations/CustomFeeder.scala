@@ -34,31 +34,31 @@ class CustomFeeder extends Simulation {
     "rating" -> ("Rating-" + randomString(4))
   ))
 
-//  def postNewGame() = {
-  ////    repeat(5) {
-  ////      feed(customFeeder)
-  ////        .exec(http("Post New Game")
-  ////        .post("videogames/")
-  ////        .body(StringBody(
-  ////                      "{" +
-  ////                      "\n\t\"id\": ${gameId}," +
-  ////                      "\n\t\"name\": \"${name}\"," +
-  ////                      "\n\t\"releaseDate\": \"${releaseDate}\"," +
-  ////                      "\n\t\"reviewScore\": ${reviewScore}," +
-  ////                      "\n\t\"category\": \"${category}\"," +
-  ////                      "\n\t\"rating\": \"${rating}\"\n}")
-  ////        ).asJson
-  ////        .check(status.is(200)))
-  ////        .pause(1)
-  ////    }
-  ////  }
+  def postNewGame2NoBestPractice() = {
+    repeat(5) {
+      feed(customFeeder)
+        .exec(http("Post New Game")
+          .post("videogames/")
+          .body(StringBody(
+            "{" +
+              "\n\t\"id\": ${gameId}," +
+              "\n\t\"name\": \"${name}\"," +
+              "\n\t\"releaseDate\": \"${releaseDate}\"," +
+              "\n\t\"reviewScore\": ${reviewScore}," +
+              "\n\t\"category\": \"${category}\"," +
+              "\n\t\"rating\": \"${rating}\"\n}")
+          ).asJson
+          .check(status.is(200)))
+        .pause(1)
+    }
+  }
 
   def postNewGame() = {
     repeat(5) {
       feed(customFeeder)
         .exec(http("Post New Game")
           .post("videogames/")
-            .body(ElFileBody("bodies/NewGameTemplate.json")).asJson
+          .body(ElFileBody("bodies/NewGameTemplate.json")).asJson
           .check(status.is(200)))
         .pause(1)
     }
