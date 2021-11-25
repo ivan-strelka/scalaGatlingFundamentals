@@ -18,9 +18,9 @@ class RuntimeParameters extends Simulation {
   def testDuration: Int = getProperty("DURATION", "60").toInt
 
   before {
-    println(s"Running test with ${userCount} users")
-    println(s"Ramping users over ${rampDuration} seconds")
-    println(s"Total test duration: ${testDuration} seconds")
+    println(s"****************** Running test with ${userCount} users ****************** ")
+    println(s"****************** Ramping users over ${rampDuration} seconds ****************** ")
+    println(s"****************** Total test duration: ${testDuration} seconds ****************** ")
   }
 
   val httpConf = http.baseUrl("http://localhost:8080/app/")

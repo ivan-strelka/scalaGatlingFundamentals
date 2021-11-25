@@ -53,9 +53,9 @@ class VideoGameFullTest extends Simulation {
 
   /*** Before ***/
   before {
-    println(s"Running test with ${userCount} users")
-    println(s"Ramping users over ${rampDuration} seconds")
-    println(s"Total Test duration: ${testDuration} seconds")
+    println(s"****************** Running test with ${userCount} users ****************** ")
+    println(s"****************** Ramping users over ${rampDuration} seconds ****************** ")
+    println(s"****************** Total test duration: ${testDuration} seconds ****************** ")
   }
 
   /*** HTTP Calls ***/
@@ -110,7 +110,7 @@ class VideoGameFullTest extends Simulation {
 
   /*** After ***/
   after {
-    println("Stress test completed")
+    println(" ************************ Stress test completed ************************ ")
   }
 
 }
