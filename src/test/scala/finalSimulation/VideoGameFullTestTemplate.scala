@@ -18,6 +18,7 @@ class VideoGameFullTestTemplate extends Simulation {
     )
   }
 
+
   // add other calls here
 
   /** SCENARIO DESIGN */
